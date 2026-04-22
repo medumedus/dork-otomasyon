@@ -1,0 +1,283 @@
+[
+    {
+        "id": 1,
+        "kategori": "Hassas Anahtarlar",
+        "baslik": "OpenSSH Private Key Exposure",
+        "aciklama": "GitHub üzerindeki OpenSSH Private Key sızıntıları",
+        "sorgu": "site:github.com \"BEGIN OPENSSH PRIVATE KEY\" {target}"
+    },
+    {
+        "id": 2,
+        "kategori": "Hassas Anahtarlar",
+        "baslik": "Nix SSH Key Leak",
+        "aciklama": "Nix uzantılı dosyalarda OpenSSH sızıntıları",
+        "sorgu": "ext:nix \"BEGIN OPENSSH PRIVATE KEY\" {target}"
+    },
+    {
+        "id": 3,
+        "kategori": "Hassas Anahtarlar",
+        "baslik": "AWS Key Exposure",
+        "aciklama": "AWS Access Key sızıntıları",
+        "sorgu": "ext:json OR ext:yaml intext:\"aws_access_key_id\" {target}"
+    },
+    {
+        "id": 4,
+        "kategori": "Şifre Dosyaları",
+        "baslik": "Password Directory",
+        "aciklama": "Açık dizinlerdeki parola dosyaları",
+        "sorgu": "site:{target} intitle:\"index of /concrete/Password\""
+    },
+    {
+        "id": 5,
+        "kategori": "Yapılandırma Dosyaları",
+        "baslik": "ProFTPD Config",
+        "aciklama": "ProFTPD konfigürasyon dosyaları",
+        "sorgu": "site:{target} intext:\"proftpd.conf\" \"index of\""
+    },
+    {
+        "id": 6,
+        "kategori": "Yapılandırma Dosyaları",
+        "baslik": "DHCP Config Exposure",
+        "aciklama": "DHCP konfigürasyon dosyaları",
+        "sorgu": "site:{target} intext:\"dhcpd.conf\" \"index of\""
+    },
+    {
+        "id": 7,
+        "kategori": "Yapılandırma Dosyaları",
+        "baslik": "SSH Directory Exposure",
+        "aciklama": "Açık /etc/ssh dizinleri",
+        "sorgu": "site:{target} intitle:\"index of /etc/ssh\""
+    },
+    {
+        "id": 8,
+        "kategori": "Yapılandırma Dosyaları",
+        "baslik": "OpenLDAP Directory",
+        "aciklama": "Açık /etc/openldap dizinleri",
+        "sorgu": "site:{target} intitle:\"index of /etc/openldap\""
+    },
+    {
+        "id": 9,
+        "kategori": "Yapılandırma Dosyaları",
+        "baslik": "Network Config Files",
+        "aciklama": "Ağ yapılandırma dosyaları",
+        "sorgu": "site:{target} intitle:\"Index of\" \"/etc/network\""
+    },
+    {
+        "id": 10,
+        "kategori": "Yapılandırma Dosyaları",
+        "baslik": "Server Config File",
+        "aciklama": "Sunucu Config Dosyaları",
+        "sorgu": "site:{target} intext:\"index of\" server.conf"
+    },
+    {
+        "id": 11,
+        "kategori": "Giriş Panelleri",
+        "baslik": "Login Pages",
+        "aciklama": "Genel login sayfaları",
+        "sorgu": "site:{target} inurl:login"
+    },
+    {
+        "id": 12,
+        "kategori": "Giriş Panelleri",
+        "baslik": "SSL Network Login",
+        "aciklama": "SSL Network Extender panelleri",
+        "sorgu": "site:{target} intitle:\"SSL Network Extender Login\""
+    },
+    {
+        "id": 13,
+        "kategori": "Giriş Panelleri",
+        "baslik": "Froxlor Panel",
+        "aciklama": "Froxlor Yönetim Paneli",
+        "sorgu": "site:{target} inurl:install.php"
+    },
+    {
+        "id": 14,
+        "kategori": "Giriş Panelleri",
+        "baslik": "User Login Panel",
+        "aciklama": "Kullanıcı login panelleri",
+        "sorgu": "site:{target} inurl:\"UserLogin/\""
+    },
+    {
+        "id": 15,
+        "kategori": "Giriş Panelleri",
+        "baslik": "Admin Panel",
+        "aciklama": "Admin panelleri",
+        "sorgu": "site:{target} inurl:adminpanel"
+    },
+    {
+        "id": 16,
+        "kategori": "Giriş Panelleri",
+        "baslik": "ASPX Login",
+        "aciklama": "ASPX login sayfaları",
+        "sorgu": "site:{target} inurl:\"/login.aspx\""
+    },
+    {
+        "id": 17,
+        "kategori": "Giriş Panelleri",
+        "baslik": "Password Pages",
+        "aciklama": "Password sayfaları",
+        "sorgu": "site:{target} inurl:/pass-aspx"
+    },
+    {
+        "id": 18,
+        "kategori": "Açık Dizinler",
+        "baslik": "JSON Directory",
+        "aciklama": "JSON içeren dizinler",
+        "sorgu": "site:{target} intitle:\"index of\" json"
+    },
+    {
+        "id": 19,
+        "kategori": "Açık Dizinler",
+        "baslik": "Userfiles Directory",
+        "aciklama": "Userfiles Dizinleri",
+        "sorgu": "site:{target} intext:\"userfiles\" intitle:\"index of\""
+    },
+    {
+        "id": 20,
+        "kategori": "Açık Dizinler",
+        "baslik": "PHP Directory",
+        "aciklama": "PHP dosya listeleri",
+        "sorgu": "site:{target} intitle:\"index of\" php"
+    },
+    {
+        "id": 21,
+        "kategori": "Açık Dizinler",
+        "baslik": "App Directory",
+        "aciklama": "App klasörleri",
+        "sorgu": "site:{target} intext:\"index of\" app"
+    },
+    {
+        "id": 22,
+        "kategori": "Açık Dizinler",
+        "baslik": "Private Directory",
+        "aciklama": "Private dizinler",
+        "sorgu": "site:{target} intitle:\"index of\" private"
+    },
+    {
+        "id": 23,
+        "kategori": "Açık Dizinler",
+        "baslik": "Robots Directory",
+        "aciklama": "robots.txt içeren dizinler",
+        "sorgu": "site:{target} intitle:\"index of\" robots.txt"
+    },
+    {
+        "id": 24,
+        "kategori": "Açık Dizinler",
+        "baslik": "WordPress Uploads",
+        "aciklama": "WordPress upload klasörleri",
+        "sorgu": "site:{target} intext:\"wp-content/uploads\""
+    },
+    {
+        "id": 25,
+        "kategori": "Açık Dizinler",
+        "baslik": "KCFinder File Manager",
+        "aciklama": "KCFinder dosya yöneticisi",
+        "sorgu": "site:{target} inurl:/kcfinder/browse.php"
+    },
+    {
+        "id": 26,
+        "kategori": "Hassas Veriler",
+        "baslik": "Database XLS Files",
+        "aciklama": "Excel veri dosyaları",
+        "sorgu": "site:{target} filetype:xls database"
+    },
+    {
+        "id": 27,
+        "kategori": "Hassas Veriler",
+        "baslik": "Mastercard Leak",
+        "aciklama": "Mastercard sızıntıları",
+        "sorgu": "site:pastebin.com mastercard {target}"
+    },
+    {
+        "id": 28,
+        "kategori": "Hassas Veriler",
+        "baslik": "VISA Leak",
+        "aciklama": "VISA sızıntıları",
+        "sorgu": "site:pastebin.com visa {target}"
+    },
+    {
+        "id": 29,
+        "kategori": "Hassas Veriler",
+        "baslik": "Invoice Files",
+        "aciklama": "Fatura sayfaları",
+        "sorgu": "site:{target} inurl:invoice"
+    },
+    {
+        "id": 30,
+        "kategori": "Hassas Veriler",
+        "baslik": "Admin Account Leak",
+        "aciklama": "Admin hesap bilgileri ",
+        "sorgu": "site:{target} intext:\"administrator\" filetype:txt"
+    },
+    {
+        "id": 31,
+        "kategori": "Loglar",
+        "baslik": "PHP Info",
+        "aciklama": "PHP info sayfaları",
+        "sorgu": "site:{target} intitle:\"phpinfo\""
+    },
+    {
+        "id": 32,
+        "kategori": "Loglar",
+        "baslik": "PHP Error Logs",
+        "aciklama": "PHP error logları",
+        "sorgu": "site:{target} inurl:php_error.log"
+    },
+    {
+        "id": 33,
+        "kategori": "Loglar",
+        "baslik": "Java SQL Usage",
+        "aciklama": "Java SQL kodları",
+        "sorgu": "site:{target} ext:java executeUpdate"
+    },
+    {
+        "id": 34,
+        "kategori": "Loglar",
+        "baslik": "WordPresss API",
+        "aciklama": "WordPress API endpointleri",
+        "sorgu": "site:{target} wp-json"
+    },
+    {
+        "id": 35,
+        "kategori": "Loglar",
+        "baslik": "PCAP Files",
+        "aciklama": "Ağ kayıt dosyaları",
+        "sorgu": "site:{target} pcapng"
+    },
+    {
+        "id": 36,
+        "kategori": "Loglar",
+        "baslik": "Index Params",
+        "aciklama": "URL parametreli sayfalar",
+        "sorgu": "site:{target} inurl:index.php id="
+    },
+    {
+        "id": 37,
+        "kategori": "Bulut",
+        "baslik": "S3 Bucket",
+        "aciklama": "AWS S3 bucket",
+        "sorgu": "site:s3.amazonaws.com {target}"
+    },
+    {
+        "id": 38,
+        "kategori": "Bulut",
+        "baslik": "Router Panel",
+        "aciklama": "Router cihazları",
+        "sorgu": "site:{target} intitle:1766"
+    },
+    {
+        "id": 39,
+        "kategori": "Bulut",
+        "baslik": "Siemens Panel",
+        "aciklama": "SCADA sistemleri",
+        "sorgu": "site:{target} siemens portal"
+    },
+    {
+        "id": 40,
+        "kategori": "Bulut",
+        "baslik": "Cluster Manager",
+        "aciklama": "Cluster yönetim panelleri",
+        "sorgu": "site:{target} \"Bright Cluster Manager\""
+    }
+
+]

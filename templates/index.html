@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yıldız CTI | Dork Otomasyonu</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <i class="fa-solid fa-shield-halved"></i>
+                <h1>YILDIZ <span>CTI</span></h1>
+            </div>
+            <p>Google Dork Üretim ve Analiz Platformu</p>
+        </header>
+
+        <section class="search-section">
+            <form method="POST" action="/generate" class="dork-form">
+                <div class="input-group">
+                    <label for="target">Hedef Alan Adı veya Kelime</label>
+                    <input type="text" id="target" name="target" placeholder="Örn: xyz.com" value="{{.Target}}" required autocomplete="off">
+                </div>
+
+                <div class="input-group">
+                    <label for="category">Sorgu Kategorileri</label>
+                    <select id="category" name="category">
+                        <option value="all">Tüm Sorgular</option>
+                        <option value="Hassas Anahtarlar">Hassas Anahtarlar</option>
+                        <option value="Şifre Dosyaları">Şifre Dosyaları</option>
+                        <option value="Yapılandırma Dosyaları">Yapılandırma Dosyaları</option>
+                        <option value="Giriş Panelleri">Giriş Panelleri</option>
+                        <option value="Açık Dizinler">Açık Dizinler</option>
+                        <option value="Hassas Veriler">Hassas Veriler</option>
+                        <option value="Loglar">Sistem Logları</option>
+                        <option value="Bulut">Bulut</option>
+                    </select>
+                </div>
+
+                <button type="submit" class="btn-generate">
+                    <i class="fa-solid fa-sparkles"></i> Dorkları Üret
+                </button>
+            </form>
+        </section>
+
+        {{if .Results}}
+        <section class="results-section">
+            <div class="results-header">
+                <h2>Bulunan Analiz Sorguları</h2>
+                <span class="badge">{{len .Results}} Kayıt</span>
+            </div>
+
+            <div class="cards-container">
+                {{range .Results}}
+                <div class="dork-card">
+                    <div class="card-header">
+                        <span class="category-tag">{{.Category}}</span>
+                        <h3>{{.Title}}</h3>
+                    </div>
+                    <div class="card-body">
+                        <p class="description">{{.Desc}}</p>
+                        <div class="query-box">
+                            <code id="query-{{.ID}}">{{.Query}}</code>
+                            <button type="button" class="btn-copy" onclick="copyToClipboard('query-{{.ID}}')">
+                                <i class="fa-regular fa-copy"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="card-footer">
+                        <a href="{{.GoogleURL}}" target="_blank" class="btn-google">
+                            <i class="fa-brands fa-google"></i> Google Analizi
+                        </a>
+                    </div>
+                </div>
+                {{end}}
+            </div>
+        </section>
+        {{else}}
+        <section class="empty-state">
+            <i class="fa-solid fa-star-and-crescent"></i>
+            <h2>Analiz Bekleniyor</h2>
+            <p>Yukarıdan bir hedef belirleyerek analizi başlatın.</p>
+        </section>
+        {{end}}
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>

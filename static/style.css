@@ -1,0 +1,168 @@
+/* --- MODERN KURUMSAL (SILICON VALLEY) TEMA --- */
+:root {
+    --bg-color: #f8fafc;        /* Açık, ferah arka plan (Slate 50) */
+    --card-bg: #ffffff;         /* Saf beyaz kartlar */
+    --text-main: #0f172a;       /* Çok koyu gri/lacivert (Okunabilirliği yüksek) */
+    --text-muted: #64748b;      /* İkincil metinler için yumuşak gri */
+    --primary: #4f46e5;         /* Koyu Çivit Mavisi / Indigo (Güven rengi) */
+    --primary-hover: #4338ca;   /* Hover durumu için bir ton koyusu */
+    --border-color: #e2e8f0;    /* İnce kurumsal sınırlar */
+    --code-bg: #f1f5f9;         /* Kod kutusu için açık gri */
+}
+
+* {
+    margin: 0; padding: 0; box-sizing: border-box;
+    /* Okunabilirliği en yüksek modern sistem fontları */
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-main);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased; /* Yazıları daha pürüzsüz yapar */
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 1rem;
+}
+
+/* Header */
+header { text-align: center; margin-bottom: 3.5rem; }
+.logo { 
+    font-size: 2.5rem; 
+    display: flex; align-items: center; justify-content: center; gap: 12px;
+    font-weight: 800; letter-spacing: -1px;
+}
+.logo i { color: var(--primary); }
+.logo span { font-weight: 300; color: var(--text-muted); }
+header p { color: var(--text-muted); margin-top: 8px; font-size: 1.1rem; }
+
+/* Arama Formu (Search Section) */
+.search-section {
+    background: var(--card-bg);
+    padding: 2.5rem;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    /* Modern, yumuşak SaaS gölgesi */
+    box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.05), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    margin-bottom: 3rem;
+}
+
+.dork-form { display: flex; flex-wrap: wrap; gap: 20px; align-items: flex-end; }
+.input-group { flex: 1; min-width: 220px; display: flex; flex-direction: column; gap: 8px; }
+.input-group label { font-size: 0.85rem; color: var(--text-main); font-weight: 600; }
+
+.input-group input, .input-group select {
+    padding: 12px 16px;
+    background: var(--card-bg);
+    border: 1px solid #cbd5e1;
+    color: var(--text-main);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+
+/* Fokus durumunda profesyonel mavi halka (Focus Ring) */
+.input-group input:focus, .input-group select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+}
+
+.btn-generate {
+    padding: 12px 24px;
+    background: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex; align-items: center; gap: 8px; height: 46px;
+    box-shadow: 0 4px 6px -1px rgba(79, 70, 229, 0.3);
+}
+
+.btn-generate:hover {
+    background: var(--primary-hover);
+    transform: translateY(-1px);
+}
+
+/* Sonuç Kartları */
+.results-header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 1.5rem; padding-bottom: 15px; border-bottom: 1px solid var(--border-color);
+}
+.results-header h2 { font-size: 1.25rem; font-weight: 700; color: var(--text-main); }
+.badge {
+    background: #e0e7ff; /* Açık çivit mavisi arka plan */
+    color: var(--primary); 
+    padding: 4px 12px; border-radius: 9999px; font-size: 0.85rem; font-weight: 600;
+}
+
+.dork-card {
+    background: var(--card-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 12px; padding: 24px; margin-bottom: 20px;
+    box-shadow: 0 1px 3px 0 rgb(0 0 0 / 0.1), 0 1px 2px -1px rgb(0 0 0 / 0.1);
+    transition: all 0.2s ease;
+}
+.dork-card:hover {
+    box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
+    border-color: #cbd5e1;
+}
+
+.card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 12px; }
+.card-header h3 { font-size: 1.1rem; font-weight: 600; color: var(--text-main); }
+
+.category-tag {
+    background: #f1f5f9;
+    color: var(--text-muted);
+    border: 1px solid #e2e8f0;
+    padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: 600;
+}
+
+.description { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 16px; }
+
+/* Kod Alanı */
+.query-box {
+    background: var(--code-bg);
+    padding: 12px 16px; border-radius: 8px;
+    border: 1px solid var(--border-color);
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 16px;
+}
+.query-box code {
+    font-family: 'JetBrains Mono', 'Courier New', Courier, monospace;
+    color: #0f172a; font-size: 0.9rem; word-break: break-all; font-weight: 500;
+}
+.btn-copy { color: var(--text-muted); background: none; border: none; cursor: pointer; font-size: 1.1rem; transition: color 0.2s; }
+.btn-copy:hover { color: var(--primary); }
+
+/* Google Butonu */
+.card-footer { display: flex; justify-content: flex-end; }
+.btn-google {
+    background: #ffffff;
+    color: #334155; 
+    border: 1px solid #cbd5e1;
+    padding: 8px 16px; border-radius: 6px; text-decoration: none;
+    font-size: 0.9rem; font-weight: 500; transition: all 0.2s;
+    display: flex; align-items: center; gap: 8px;
+    box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+}
+.btn-google:hover { background: #f8fafc; color: #ea4335; border-color: #ea4335; }
+.btn-google i { color: #ea4335; }
+
+/* Empty State */
+.empty-state {
+    text-align: center; padding: 4rem 2rem;
+    background: var(--card-bg);
+    border: 2px dashed var(--border-color); border-radius: 12px;
+}
+.empty-state i { font-size: 3rem; color: #cbd5e1; margin-bottom: 1.5rem; }
+.empty-state h2 { color: var(--text-main); margin-bottom: 0.5rem; font-weight: 600; }
+.empty-state p { color: var(--text-muted); }
